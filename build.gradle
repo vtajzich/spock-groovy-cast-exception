@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id 'groovy'
+}
+
+group 'net.tajzich.spock'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    //Groovy 2.5.x & spock 1.2 fails
+    compile group: 'org.codehaus.groovy', name: 'groovy', version: '2.5.4'
+    testCompile group: 'org.spockframework', name: 'spock-core', version: '1.2-groovy-2.5'
+
+    //Groovy 2.4 & spock 1.1 works
+//    compile group: 'org.codehaus.groovy', name: 'groovy', version: '2.4.15'
+//    testCompile group: 'org.spockframework', name: 'spock-core', version: '1.1-groovy-2.4'
+}
